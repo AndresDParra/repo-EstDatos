@@ -92,9 +92,19 @@ public class TiendaMain {
         cliente cliente = new cliente(nombre,id,edad);
 
        Producto producto1 = Producto.crearProducto(codproducto, Integer.parseInt(precio), Integer.parseInt(cantidad));
+//       Producto producto2 = Producto.crearProducto(codproducto +"9", Integer.parseInt(precio)*2 , Integer.parseInt(cantidad)*2);
+//       Producto producto3 = Producto.crearProducto(codproducto+"2", Integer.parseInt(precio)*3, Integer.parseInt(cantidad)*3);
        tiendaMain.getProductos().add(producto1);
+//       tiendaMain.getProductos().add(producto2);
+//       tiendaMain.getProductos().add(producto3);
        venta nuevaVenta = venta.registrarVenta(producto1, Integer.parseInt(cantidad), cliente);
-       tiendaMain.getVentas().put(codproducto,nuevaVenta);
+//       venta nuevaVenta2 = venta.registrarVenta(producto2, Integer.parseInt(cantidad), cliente);
+//       venta nuevaVenta3 = venta.registrarVenta(producto3, Integer.parseInt(cantidad), cliente);
+       tiendaMain.getVentas().put(producto1.getCodproducto(),nuevaVenta);
+       System.out.println("deseas ingresar más productos y/n");
+       String respuesta = sc.nextLine();
+//       tiendaMain.getVentas().put(producto2.getCodproducto(),nuevaVenta2);
+//       tiendaMain.getVentas().put(producto3.getCodproducto(),nuevaVenta3);
        tiendaMain.mostrarTodasLasVentas();
        tiendaMain.mostrarVentasEnOrdenDeRegistro();
 
